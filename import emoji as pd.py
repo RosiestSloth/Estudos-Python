@@ -1,1 +1,0 @@
-import emoji as pd
