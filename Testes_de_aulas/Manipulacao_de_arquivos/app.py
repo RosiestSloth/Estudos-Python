@@ -7,7 +7,7 @@
 # r+ - Leitura + escrita
 # w - torna o arquivo em escrita mas limpa o conteúdo anterior/ cria um arquivo novo
 
-#arquivo = open('Testes_de_aulas/Manipulacao_de_arquivos/teste3.txt', 'x')
+# arquivo = open('Testes_de_aulas/Manipulacao_de_arquivos/teste3.txt', 'x')
 
 #print(arquivo.readable()) - Verifica se o arquivo pode ser lido retornando True or False
 #print(arquivo.read()) - Lê todo o arquivo.txt
@@ -26,7 +26,7 @@
 
 import os
 
-#if os.path.exists('Testes_de_aulas/Manipulacao_de_arquivos/teste3.txt'): # Verifica a existência de um arquivo e deleta o mesmo
+# if os.path.exists('Testes_de_aulas/Manipulacao_de_arquivos/teste3.txt'): # Verifica a existência de um arquivo e deleta o mesmo
 #    os.remove('Testes_de_aulas/Manipulacao_de_arquivos/teste3.txt')
 #    print('Deletado com sucesso')
 #else:
