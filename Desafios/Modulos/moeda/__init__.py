@@ -40,3 +40,11 @@ def moeda(num=0, moeda = 'R$'):
     """
     return f'{moeda}{num:.2f}'.replace('.', ',')
 
+def resumo(preco=0, taxa=10, taxar=5):
+    print('-'*30)
+    print('Resumo do valor'.center(30))
+    print('-'*30)
+    print(f'Preço analisado: \t{moeda(preco)}')
+    print(f'Dobro do preço: \t{moedas_dobro(preco, True)}')
+    print(f'Metade do preço: \t{moedas_metade(preco, True)}')
+    print('-'*30)
