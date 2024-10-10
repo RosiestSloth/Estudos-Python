@@ -1,5 +1,31 @@
 import time
 
+def arqExiste(nome):
+    try:
+        a = open(nome, 'rt')
+    except FileNotFoundError:
+        return False
+    else:
+        return True
+
+def lerArquivo(nome):
+    try:
+        a = open(nome, 'rt')
+    except:
+        print('Erro ao ler o arquivo!')
+    else:
+        print('-'*30, '\nPESSOAS CADASTRADAS\n', '-'*30)
+        print(a.read())
+
+def CriarArq(nome):
+    try:
+        a = open(nome, 'wt+')
+        a.close
+    except:
+        print('Houve um erro na criação do arquivo')
+    else:
+        print(f'Arquivo {nome} criado com sucesso!')
+
 def leiaInt():
     try:
         idade = int(input("Digite a idade: "))
@@ -11,10 +37,17 @@ def leiaInt():
         time.sleep(1)
     else:
         return idade
-        
 
+
+arq = 'cursoemvideo.txt'
 pessoas = []
 cont = 0
+
+if arqExiste(arq):
+    print('Arquivo encontrado com sucesso!')
+else:
+    print('Arquivo não encontrado!')
+    CriarArq(arq)
 
 while True:
     try:
@@ -37,23 +70,12 @@ while True:
             print('-'*30)
             print('          OPÇÃO 1')
             print('-'*30)
-            print("As pessoas cadastradas são:")
-            for n in pessoas:
-                print('-'*30)
-                print(f"\tNome: {n['nome']}\n\tIdade: {n['idade']}")
-                print('-'*30)
-                time.sleep(1)
-
+            lerArquivo(arq)
         elif opcao == 2:
             print('-'*30)
             print('          OPÇÃO 2')
             print('-'*30)
-            nome = str(input("Digite o nome: "))
-
-            idade = leiaInt()
-            pessoa = {"nome": nome, "idade": idade}
-            pessoas.append(pessoa)
-
+            
         
         elif opcao == 3:
             print('-'*30)

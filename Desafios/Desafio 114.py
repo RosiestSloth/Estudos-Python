@@ -1,12 +1,10 @@
-import requests
+import urllib
+import urllib.request
 
-def Verificar_Site(url):
-    try:
-        resposta = requests.get(url)
-    except:
-        print('O site do Pudim não está acessível.')
-    else:
-        print("O Site do Pudim está acessível.")
-
-Verificar_Site('https://www.pudim.com.br/')
-
+try:
+    site = urllib.request.urlopen('https://pudim.com.br')
+except urllib.error.URLError:
+    print("O site Pudim não está acessível no momento.")
+else:
+    print("Conseegui acesar o site Pudim com sucesso!")
+    print(site.read())
