@@ -9,7 +9,7 @@ def opcoes(tipo):
 
     if tipo == "menuInicio":
         print("-="*5, "MENU INICIAL", "-="*5)
-        print("\n- 1: Cadastro de Clientes\n- 2: Cadastro de Funcionários\n- 3: Realização de Pedidos\n- 4: Cadastro de Pizzas\n- 5: Listagem de Clientes\n- 6: Listagem de Funcionários\n- 7: Editar Dados de Clientes\n- 0: Fechar o Programa")
+        print("\n- 1: Cadastro de Clientes\n- 2: Cadastro de Funcionários\n- 3: Realização de Pedidos\n- 4: Cadastro de Pizzas\n- 5: Listagem de Clientes\n- 6: Listagem de Funcionários\n- 7: Editar Dados de Clientes\n- 8: Editar Dados de Funcionários\n- 0: Fechar o Programa")
         option = int(input("\nDigite o valor: "))
         return option
     
@@ -68,6 +68,17 @@ def CadastroClientes():
         sleep(0.5)
         CadastroClientes()
 
+def editarCliente(id_cliente):
+    try:
+        print(f"Editando informações de {clientes[id_cliente]["nome"]}")
+        
+        clientes[id_cliente]["nome"] = str(input("Digite o nome do cliente: "))
+        clientes[id_cliente]["contato"] = str(input("Digite o contato do cliente: "))
+        clientes[id_cliente]["endereco"] = str(input("Digite o endereço do cliente: "))
+
+    except Exception as e:
+        print(f"Erro: valores inválidos: {e}")
+
 # Seção de Funcionários
 def listarFuncionarios():
     """ listagem de funcionários com um for simples, utilizando os valores dentro do dicionário """
@@ -100,17 +111,6 @@ def CadastroFuncionarios():
         print("Erro ao Cadastrar Funcionário: ", e)
         sleep(0.5)
         CadastroFuncionarios()
-
-def editarCliente(id_cliente):
-    try:
-        print(f"Editando informações de {clientes[id_cliente]["nome"]}")
-        
-        clientes[id_cliente]["nome"] = str(input("Digite o nome do cliente: "))
-        clientes[id_cliente]["contato"] = str(input("Digite o contato do cliente: "))
-        clientes[id_cliente]["endereco"] = str(input("Digite o endereço do cliente: "))
-
-    except Exception as e:
-        print(f"Erro: valores inválidos: {e}")
 
 def editarFuncionario(id_funcionario):
     try:
